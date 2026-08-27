@@ -1,0 +1,907 @@
+ /* =====================================================
+           ROOT
+        ===================================================== */
+
+ :root {
+
+     /* PRIMARY COLORS */
+
+     --dark-brown: #3B2418;
+     --warm-white: #F8F5EF;
+
+
+     /* SECONDARY COLORS */
+
+     --brown: #6B4632;
+     --beige: #D8C3A5;
+
+
+     /* LIGHT COLORS */
+
+     --light-beige: #E8DED0;
+     --soft-gray: #756F68;
+
+
+     /* BORDERS */
+
+     --border-light: #D2C8BC;
+     --border-dark: #3B2418;
+
+
+     /* DARK COLORS */
+
+     --black: #181616;
+     --pure-black: #000000;
+
+
+     /* EXTRA */
+
+     --white: #ffffff;
+     --transition: 0.3s ease;
+
+ }
+
+
+ /* =====================================================
+           RESET
+        ===================================================== */
+
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+
+
+ html {
+     scroll-behavior: smooth;
+ }
+
+
+ body {
+     background-color: var(--warm-white);
+     color: var(--black);
+
+     font-family: "Inter", sans-serif;
+
+     line-height: 1.6;
+
+     -webkit-font-smoothing: antialiased;
+ }
+
+
+ a {
+     text-decoration: none;
+     color: inherit;
+ }
+
+
+ button {
+     font-family: inherit;
+ }
+
+
+ /* =====================================================
+           GLOBAL CONTAINER
+        ===================================================== */
+
+ .container {
+     width: min(100% - 80px, 1240px);
+     margin: auto;
+ }
+
+
+
+ /* =====================================================
+           CV HERO
+        ===================================================== */
+
+ .cv-section {
+     padding: 14px 0 0;
+ }
+
+
+ .breadcrumb {
+     font-family: "DM Mono", monospace;
+
+     font-size: 10px;
+
+     letter-spacing: 2px;
+
+     color: var(--soft-gray);
+
+     margin-bottom: 42px;
+ }
+
+
+ .breadcrumb span {
+     color: var(--brown);
+ }
+
+
+ /* Main heading */
+
+ .cv-title {
+     max-width: 850px;
+
+     font-family: "DM Mono", monospace;
+
+     font-size: clamp(42px, 5vw, 64px);
+
+     font-weight: 500;
+
+     line-height: 1.04;
+
+     letter-spacing: -3px;
+
+     color: var(--dark-brown);
+
+     margin-bottom: 24px;
+ }
+
+
+ .cv-description {
+     max-width: 680px;
+
+     color: var(--soft-gray);
+
+     font-size: 16px;
+
+     line-height: 1.8;
+
+     margin-bottom: 70px;
+ }
+
+
+ /* Divider */
+
+ .section-divider {
+     height: 1px;
+
+     width: 100%;
+
+     background-color: var(--border-light);
+
+     margin-bottom: 48px;
+ }
+
+
+ /* =====================================================
+           CV SELECTOR
+        ===================================================== */
+
+ .cv-layout {
+     display: grid;
+
+     grid-template-columns: 300px 1fr;
+
+     gap: 55px;
+
+     align-items: start;
+
+     padding-bottom: 90px;
+ }
+
+
+ /* Left side */
+
+ .versions-label {
+     font-family: "DM Mono", monospace;
+
+     font-size: 10px;
+
+     letter-spacing: 2px;
+
+     color: var(--soft-gray);
+
+     margin-bottom: 18px;
+ }
+
+
+ .version-item {
+     border-top: 1px solid var(--border-light);
+
+     padding: 20px 0;
+
+     cursor: pointer;
+
+     transition: var(--transition);
+ }
+
+
+ .version-item:last-child {
+     border-bottom: 1px solid var(--border-light);
+ }
+
+
+ .version-item:hover {
+     padding-left: 10px;
+ }
+
+
+ .version-item.active {
+     padding-left: 10px;
+ }
+
+
+ .version-header {
+     display: flex;
+
+     justify-content: space-between;
+
+     align-items: center;
+
+     margin-bottom: 4px;
+ }
+
+
+ .version-name {
+     font-family: "DM Mono", monospace;
+
+     font-size: 14px;
+
+     color: var(--dark-brown);
+ }
+
+
+ .version-item.active .version-name {
+     font-weight: 500;
+ }
+
+
+ .version-status {
+     font-family: "DM Mono", monospace;
+
+     font-size: 9px;
+
+     letter-spacing: 1.5px;
+
+     color: var(--brown);
+ }
+
+
+ .version-description {
+     color: var(--soft-gray);
+
+     font-size: 12px;
+ }
+
+
+ /* =====================================================
+           CV CARD
+        ===================================================== */
+
+ .cv-card {
+     border: 1px solid var(--border-light);
+
+     background-color: var(--warm-white);
+
+     transition: var(--transition);
+ }
+
+
+ .cv-card:hover {
+     border-color: var(--beige);
+ }
+
+
+ /* Card header */
+
+ .cv-card-header {
+     padding: 25px 28px;
+
+     border-bottom: 1px solid var(--border-light);
+
+     display: flex;
+
+     justify-content: space-between;
+
+     align-items: flex-start;
+
+     gap: 30px;
+ }
+
+
+ .cv-card-title {
+     font-family: "DM Mono", monospace;
+
+     font-size: 21px;
+
+     line-height: 1.4;
+
+     color: var(--dark-brown);
+
+     margin-bottom: 7px;
+ }
+
+
+ .cv-card-description {
+     color: var(--soft-gray);
+
+     font-size: 14px;
+
+     line-height: 1.7;
+
+     max-width: 560px;
+ }
+
+
+ /* Download */
+
+ .download-btn {
+     flex-shrink: 0;
+
+     background-color: var(--dark-brown);
+
+     color: var(--warm-white);
+
+     border: 1px solid var(--dark-brown);
+
+     padding: 13px 18px;
+
+     font-family: "DM Mono", monospace;
+
+     font-size: 10px;
+
+     letter-spacing: 1.2px;
+
+     cursor: pointer;
+
+     transition: var(--transition);
+ }
+
+
+ .download-btn:hover {
+     background-color: var(--brown);
+
+     border-color: var(--brown);
+
+     transform: translateY(-2px);
+ }
+
+
+ /* Card body */
+
+ .cv-card-body {
+     padding: 25px 28px 30px;
+ }
+
+
+ .emphasis-label {
+     font-family: "DM Mono", monospace;
+
+     font-size: 9px;
+
+     letter-spacing: 2px;
+
+     color: var(--soft-gray);
+
+     margin-bottom: 18px;
+ }
+
+
+ .emphasis-list {
+     list-style: none;
+
+     display: flex;
+
+     flex-direction: column;
+
+     gap: 13px;
+
+     margin-bottom: 28px;
+ }
+
+
+ .emphasis-list li {
+     display: flex;
+
+     align-items: flex-start;
+
+     gap: 12px;
+
+     font-size: 14px;
+
+     color: var(--black);
+ }
+
+
+ .emphasis-list li::before {
+     content: "—";
+
+     color: var(--brown);
+
+     font-family: "DM Mono", monospace;
+ }
+
+
+ /* CV preview */
+
+ .cv-preview {
+     min-height: 300px;
+
+     border: 1px solid var(--border-light);
+
+     background-color: var(--light-beige);
+
+     padding: 28px;
+
+     position: relative;
+
+     overflow: hidden;
+ }
+
+
+ .cv-preview::before {
+     content: "AHMED WALEED";
+
+     position: absolute;
+
+     top: 20px;
+
+     right: 25px;
+
+     font-family: "DM Mono", monospace;
+
+     font-size: 9px;
+
+     letter-spacing: 2px;
+
+     color: var(--brown);
+
+     opacity: 0.7;
+ }
+
+
+ .preview-line {
+     height: 1px;
+
+     background-color: var(--beige);
+
+     margin-bottom: 18px;
+
+     width: 100%;
+ }
+
+
+ .preview-title {
+     font-family: "DM Mono", monospace;
+
+     font-size: 24px;
+
+     color: var(--dark-brown);
+
+     margin: 35px 0 15px;
+ }
+
+
+ .preview-small-line {
+     height: 8px;
+
+     background-color: var(--beige);
+
+     width: 70%;
+
+     margin-bottom: 10px;
+
+     opacity: 0.7;
+ }
+
+
+ .preview-small-line.short {
+     width: 45%;
+ }
+
+
+ .preview-columns {
+     display: grid;
+
+     grid-template-columns: 1fr 1fr;
+
+     gap: 30px;
+
+     margin-top: 35px;
+ }
+
+
+ .preview-column-title {
+     font-family: "DM Mono", monospace;
+
+     font-size: 10px;
+
+     color: var(--brown);
+
+     margin-bottom: 14px;
+ }
+
+
+ .preview-block {
+     height: 6px;
+
+     background-color: var(--beige);
+
+     width: 100%;
+
+     margin-bottom: 8px;
+
+     opacity: 0.65;
+ }
+
+
+ .preview-block.small {
+     width: 65%;
+ }
+
+
+ /* =====================================================
+           TIMELINE
+        ===================================================== */
+
+ .timeline-section {
+     background-color: var(--light-beige);
+
+     border-top: 1px solid var(--border-light);
+
+     border-bottom: 1px solid var(--border-light);
+
+     padding: 50px 0 65px;
+ }
+
+
+ .timeline-label {
+     font-family: "DM Mono", monospace;
+
+     font-size: 10px;
+
+     letter-spacing: 2px;
+
+     color: var(--brown);
+
+     margin-bottom: 20px;
+ }
+
+
+ .timeline-title {
+     font-family: "DM Mono", monospace;
+
+     font-size: 30px;
+
+     font-weight: 500;
+
+     color: var(--dark-brown);
+
+     margin-bottom: 42px;
+ }
+
+
+ .timeline-item {
+     display: grid;
+
+     grid-template-columns: 200px 1fr 400px;
+
+     gap: 45px;
+
+     padding: 28px 0;
+
+     border-top: 1px solid var(--border-light);
+
+     align-items: start;
+ }
+
+
+ .timeline-item:last-child {
+     border-bottom: 1px solid var(--border-light);
+ }
+
+
+ .timeline-date {
+     font-family: "DM Mono", monospace;
+
+     font-size: 12px;
+
+     color: var(--brown);
+ }
+
+
+ .timeline-role {
+     font-family: "DM Mono", monospace;
+
+     font-size: 15px;
+
+     font-weight: 500;
+
+     color: var(--dark-brown);
+ }
+
+
+ .timeline-description {
+     color: var(--soft-gray);
+
+     font-size: 13px;
+
+     line-height: 1.8;
+ }
+
+
+ /* =====================================================
+           BOTTOM CTA
+        ===================================================== */
+
+ .bottom-cta {
+     padding: 60px 0;
+ }
+
+
+ .cta-inner {
+     display: flex;
+
+     justify-content: space-between;
+
+     align-items: center;
+
+     gap: 30px;
+ }
+
+
+ .cta-text {
+     font-size: 18px;
+
+     color: var(--dark-brown);
+
+     letter-spacing: -0.3px;
+ }
+
+
+ .cta-button {
+     padding: 14px 22px;
+
+     border: 1px solid var(--dark-brown);
+
+     background-color: transparent;
+
+     color: var(--dark-brown);
+
+     font-family: "DM Mono", monospace;
+
+     font-size: 10px;
+
+     letter-spacing: 1.5px;
+
+     transition: var(--transition);
+ }
+
+
+ .cta-button:hover {
+     background-color: var(--dark-brown);
+
+     color: var(--warm-white);
+
+     transform: translateY(-2px);
+ }
+
+
+ /* =====================================================
+           FOOTER
+        ===================================================== */
+
+ footer {
+     border-top: 1px solid var(--border-light);
+
+     padding: 25px 0;
+
+     color: var(--soft-gray);
+
+     font-family: "DM Mono", monospace;
+
+     font-size: 10px;
+
+     letter-spacing: 1px;
+ }
+
+
+ .footer-inner {
+     display: flex;
+
+     justify-content: space-between;
+
+     align-items: center;
+ }
+
+
+ /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+ @media (max-width: 1000px) {
+
+     .navbar-inner,
+     .container {
+         width: min(100% - 50px, 900px);
+     }
+
+
+     .nav-links {
+         gap: 18px;
+     }
+
+
+     .cv-layout {
+         grid-template-columns: 230px 1fr;
+
+         gap: 35px;
+     }
+
+
+     .timeline-item {
+         grid-template-columns: 150px 1fr;
+
+         gap: 25px;
+     }
+
+
+     .timeline-description {
+         grid-column: 2;
+     }
+
+ }
+
+
+ @media (max-width: 768px) {
+
+     .navbar {
+         height: auto;
+
+         padding: 18px 0;
+     }
+
+
+     .navbar-inner {
+         width: min(100% - 35px, 700px);
+
+         flex-wrap: wrap;
+
+         gap: 20px;
+     }
+
+
+     .nav-links {
+         order: 3;
+
+         width: 100%;
+
+         overflow-x: auto;
+
+         padding-bottom: 5px;
+
+         gap: 22px;
+     }
+
+
+     .nav-button {
+         display: none;
+     }
+
+
+     .container {
+         width: min(100% - 35px, 700px);
+     }
+
+
+     .cv-section {
+         padding-top: 10px;
+     }
+
+
+     .cv-title {
+         font-size: clamp(38px, 9vw, 52px);
+
+         letter-spacing: -2px;
+     }
+
+
+     .cv-description {
+         font-size: 14px;
+
+         margin-bottom: 45px;
+     }
+
+
+     .cv-layout {
+         grid-template-columns: 1fr;
+
+         gap: 35px;
+     }
+
+
+     .cv-card-header {
+         flex-direction: column;
+     }
+
+
+     .download-btn {
+         width: 100%;
+     }
+
+
+     .timeline-item {
+         grid-template-columns: 1fr;
+
+         gap: 12px;
+     }
+
+
+     .timeline-description {
+         grid-column: auto;
+     }
+
+
+     .cta-inner {
+         flex-direction: column;
+
+         align-items: flex-start;
+     }
+
+ }
+
+
+ @media (max-width: 480px) {
+
+     .logo-role {
+         display: none;
+     }
+
+
+     .nav-links {
+         gap: 18px;
+     }
+
+
+     .nav-links a {
+         font-size: 9px;
+     }
+
+
+     .cv-title {
+         font-size: 36px;
+
+         line-height: 1.1;
+     }
+
+
+     .cv-card-header,
+     .cv-card-body {
+         padding: 20px;
+     }
+
+
+     .cv-preview {
+         padding: 20px;
+     }
+
+
+     .preview-columns {
+         grid-template-columns: 1fr;
+
+         gap: 25px;
+     }
+
+
+     .timeline-section {
+         padding: 40px 0 50px;
+     }
+
+
+     .timeline-title {
+         font-size: 26px;
+     }
+
+
+     .footer-inner {
+         flex-direction: column;
+
+         align-items: flex-start;
+
+         gap: 10px;
+     }
+
+ }
