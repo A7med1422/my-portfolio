@@ -426,16 +426,11 @@ footer {
 /* =========================================================
    TABLET
    ========================================================= */
+/* =========================================================
+   TABLET
+   ========================================================= */
 
 @media (max-width: 850px) {
-
-    .nav-links {
-        gap: 14px;
-    }
-
-    .nav-links a:not(.nav-cta) {
-        display: none;
-    }
 
     .contact-grid {
         grid-template-columns: 1fr;
@@ -450,23 +445,6 @@ footer {
    ========================================================= */
 
 @media (max-width: 600px) {
-
-    .site-header {
-        height: 64px;
-    }
-
-    .nav,
-    main {
-        width: min(calc(100% - 28px), var(--max));
-    }
-
-    .brand {
-        font-size: 12px;
-    }
-
-    .nav-cta {
-        padding: 10px 12px;
-    }
 
     .hero {
         padding: 10px 8px 52px;

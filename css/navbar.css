@@ -1,6 +1,6 @@
 /* =====================================================
-           NAVBAR
-        ===================================================== */
+   NAVBAR
+===================================================== */
 
 .navbar {
     width: 100%;
@@ -22,13 +22,15 @@
 
 
 .navbar-inner {
-    width: min(100% - 80px, 940px);
+    width: min(100% - 80px, 1400px);
 
     margin: auto;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    gap: 30px;
 }
 
 
@@ -46,11 +48,12 @@
     color: var(--dark-brown);
 
     white-space: nowrap;
+
+    flex-shrink: 0;
 }
 
 .logo:hover {
     color: var(--dark-brown);
-    /* letter-spacing: 3px; */
     translate: 0px -10px;
     transition-duration: .5s;
     text-shadow: 1px 1px 2px var(--dark-brown);
@@ -77,7 +80,9 @@
     display: flex;
     align-items: center;
 
-    gap: 28px;
+    gap: clamp(16px, 2vw, 28px);
+
+    flex-shrink: 1;
 }
 
 
@@ -93,6 +98,8 @@
     transition: var(--transition);
 
     position: relative;
+
+    white-space: nowrap;
 }
 
 .nav-links a:hover {
@@ -119,11 +126,6 @@
 }
 
 
-.nav-links a:hover {
-    color: var(--dark-brown);
-}
-
-
 .nav-links a:hover::after {
     width: 100%;
 }
@@ -147,6 +149,10 @@
     border: 1px solid var(--dark-brown);
 
     transition: var(--transition);
+
+    white-space: nowrap;
+
+    flex-shrink: 0;
 }
 
 
@@ -156,4 +162,367 @@
     border-color: var(--brown);
 
     transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   RESPONSIVE DIMENSIONS
+===================================================== */
+
+
+/* Large Screens */
+
+@media (min-width: 1400px) {
+
+    .navbar-inner {
+        width: min(100% - 100px, 1400px);
+    }
+}
+
+
+/* Medium / Laptop */
+
+@media (max-width: 1200px) {
+
+    .navbar-inner {
+        width: calc(100% - 60px);
+
+        gap: 20px;
+    }
+
+    .nav-links {
+        gap: 18px;
+    }
+
+    .nav-button {
+        padding: 12px 16px;
+    }
+}
+
+
+/* Small Laptop / Large Tablet */
+
+@media (max-width: 1050px) {
+
+    .navbar-inner {
+        width: calc(100% - 40px);
+
+        gap: 15px;
+    }
+
+    .nav-links {
+        gap: 14px;
+    }
+
+    .nav-links a {
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+
+    .nav-button {
+        padding: 11px 14px;
+
+        font-size: 9px;
+    }
+}
+
+
+/* Tablet */
+
+@media (max-width: 900px) {
+
+    .navbar-inner {
+        width: calc(100% - 40px);
+    }
+
+    .nav-links {
+        gap: 10px;
+    }
+
+    .nav-links a {
+        font-size: 9px;
+    }
+
+    .nav-button {
+        padding: 10px 12px;
+
+        font-size: 8px;
+    }
+
+    .logo {
+        font-size: 13px;
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        height: 68px;
+    }
+
+    .navbar-inner {
+        width: calc(100% - 30px);
+
+        gap: 15px;
+    }
+
+    /*
+       Hide desktop navigation on mobile.
+       Hamburger will replace it.
+    */
+
+    .nav-links,
+    .nav-button {
+        display: none;
+    }
+
+    .navbar-toggler {
+        display: flex;
+
+        margin-left: auto;
+
+        align-items: center;
+        justify-content: center;
+
+        flex-shrink: 0;
+    }
+}
+
+
+/* Small Mobile */
+
+@media (max-width: 480px) {
+
+    .navbar {
+        height: 64px;
+    }
+
+    .navbar-inner {
+        width: calc(100% - 24px);
+    }
+
+    .logo {
+        font-size: 12px;
+
+        gap: 6px;
+    }
+
+    .navbar-toggler {
+        padding: 6px;
+    }
+}
+
+
+/* Very Small Mobile */
+
+@media (max-width: 360px) {
+
+    .navbar-inner {
+        width: calc(100% - 20px);
+    }
+
+    .logo {
+        font-size: 11px;
+
+        gap: 5px;
+    }
+}
+
+/* =====================================================
+   MOBILE NAVBAR TOGGLER
+===================================================== */
+
+.navbar-toggler {
+    display: none;
+}
+
+
+/* Tablet & Mobile */
+
+@media (max-width: 768px) {
+
+    .navbar-toggler {
+        display: flex !important;
+
+        width: 42px;
+        height: 42px;
+
+        margin-left: auto;
+
+        align-items: center;
+        justify-content: center;
+
+        padding: 8px;
+
+        background: transparent;
+
+        border: 1px solid var(--dark-brown);
+
+        cursor: pointer;
+
+        flex-shrink: 0;
+    }
+
+    .navbar-toggler-icon {
+        display: block;
+
+        width: 22px;
+        height: 16px;
+
+        position: relative;
+
+        background-image: none !important;
+    }
+
+    .navbar-toggler-icon::before,
+    .navbar-toggler-icon::after,
+    .navbar-toggler-icon {
+        border-top: 2px solid var(--dark-brown);
+    }
+
+    .navbar-toggler-icon::before,
+    .navbar-toggler-icon::after {
+        content: "";
+
+        position: absolute;
+
+        left: 0;
+
+        width: 22px;
+        height: 2px;
+
+        background-color: var(--dark-brown);
+
+        border: 0;
+    }
+
+    .navbar-toggler-icon::before {
+        top: 5px;
+    }
+
+    .navbar-toggler-icon::after {
+        top: 13px;
+    }
+
+}
+
+/* =====================================================
+   MOBILE MENU
+===================================================== */
+
+.navbar-toggler {
+    display: none;
+}
+
+
+@media (max-width: 768px) {
+
+    .navbar-inner {
+        position: relative;
+    }
+
+
+    .navbar-toggler {
+        display: flex !important;
+
+        width: 42px;
+        height: 42px;
+
+        margin-left: auto;
+
+        align-items: center;
+        justify-content: center;
+
+        padding: 8px;
+
+        background: transparent;
+
+        border: 1px solid var(--dark-brown);
+
+        cursor: pointer;
+
+        flex-shrink: 0;
+    }
+
+
+    .navbar-toggler-icon {
+        display: block;
+
+        width: 22px;
+        height: 2px;
+
+        position: relative;
+
+        background-color: var(--dark-brown);
+    }
+
+
+    .navbar-toggler-icon::before,
+    .navbar-toggler-icon::after {
+        content: "";
+
+        position: absolute;
+
+        left: 0;
+
+        width: 22px;
+        height: 2px;
+
+        background-color: var(--dark-brown);
+    }
+
+
+    .navbar-toggler-icon::before {
+        top: -7px;
+    }
+
+
+    .navbar-toggler-icon::after {
+        top: 7px;
+    }
+
+
+    /* Hide desktop menu */
+
+    .nav-links,
+    .nav-button {
+        display: none;
+    }
+
+
+    /* Open menu */
+
+    .nav-links.active {
+        display: flex;
+
+        position: absolute;
+
+        top: calc(100% + 1px);
+
+        left: 0;
+        right: 0;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 0;
+
+        padding: 15px 20px;
+
+        background-color: var(--warm-white);
+
+        border: 1px solid var(--border-light);
+    }
+
+
+    .nav-links.active a {
+        padding: 14px 0;
+    }
+
 }

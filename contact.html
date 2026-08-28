@@ -32,6 +32,11 @@
 
             </a>
 
+            <!-- Toggler/collapsibe Button -->
+            <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
 
             <nav class="nav-links">
 
@@ -88,7 +93,7 @@
                     <div class="detail">
                         <div class="detail-label">EMAIL</div>
                         <div class="detail-value">
-                            <a href="ahmedwaleed.work2005@gmail.com">ahmedwaleed.work2005@gmail.com</a>
+                            <a href="mailto:ahmedwaleed.work2005@gmail.com">ahmedwaleed.work2005@gmail.com</a>
                         </div>
                     </div>
 
@@ -128,18 +133,21 @@
                 <form id="contactForm">
                     <div class="field">
                         <label for="name">NAME</label>
-                        <input id="name" name="name" type="text" placeholder="Your name" required>
+                        <input id="name" name="name" type="text" placeholder="Your name" class="form-control"
+                            autocomplete="name" required>
                     </div>
 
                     <div class="field">
                         <label for="email">EMAIL</label>
-                        <input id="email" name="email" type="email" placeholder="you@company.com" required>
+                        <input id="email" name="email" type="email" placeholder="you@company.com" class="form-control"
+                            autocomplete="email" required>
                     </div>
 
                     <div class="field">
                         <label for="message">WHAT DO YOU NEED?</label>
                         <textarea id="message" name="message"
-                            placeholder="The problem, the constraints, and your timeline." required></textarea>
+                            placeholder="The problem, the constraints, and your timeline." class="form-control"
+                            autocomplete="message" required></textarea>
                     </div>
 
                     <button type="submit">Open email client</button>
@@ -153,28 +161,16 @@
         © 2026 Ahmed Waleed · AI Engineer
     </footer>
 
-    <script>
-        const form = document.getElementById("contactForm");
-        const status = document.getElementById("status");
 
-        form.addEventListener("submit", (event) => {
-            event.preventDefault();
+    <script src="js/main.js"></script>
 
-            const name = document.getElementById("name").value.trim();
-            const email = document.getElementById("email").value.trim();
-            const message = document.getElementById("message").value.trim();
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 
-            const subject = encodeURIComponent(`Project inquiry from ${name}`);
-            const body = encodeURIComponent(
-                `Name: ${name}\nEmail: ${email}\n\n${message}`
-            );
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 
-            window.location.href =
-                `mailto:hello@ahmedwaleed.dev?subject=${subject}&body=${body}`;
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-            status.textContent = "Opening your email client…";
-        });
-    </script>
+
 </body>
 
 </html>
